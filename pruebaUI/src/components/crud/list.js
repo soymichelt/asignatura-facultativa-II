@@ -44,7 +44,7 @@ const Elemento = (props) => {
             onPress={ () => eventoPantallaEditar(item.key) }
         >
             <Text style={styles.elemento}>
-                {item.nombre}
+                {item.nombreAlumno}
             </Text>
         </TouchableOpacity>
     )
@@ -60,6 +60,10 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 8,
         fontWeight: 'bold',
+        color: 'black',
+        height: 50,
+        backgroundColor: 'red',
+        margin: 8,
     },
 })
 

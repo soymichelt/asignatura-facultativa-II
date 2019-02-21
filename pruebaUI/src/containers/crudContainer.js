@@ -12,7 +12,8 @@
         this.state = {
             pantalla: 'lista',
             alumnos: [],
-            nombreAlumno: '',
+            nombreAlumnoCrear: '',
+            nombreAlumnoEditar: '',
             editarId: 0,
         };
 
@@ -34,18 +35,18 @@
     /* eventps para pantalla crear */
     eventoNombre = (textNombre) => {
         this.setState({
-            nombreAlumno: textNombre,
+            nombreAlumnoCrear: textNombre,
         })
     }
 
     eventoCrear = () => {
-        const { nombreAlumno, alumnos } = this.state
+        const { nombreAlumnoCrear, alumnos } = this.state
         alumnos.push({
-            key: alumnos.length + 1,
-            nombreAlumno,
+            key: (alumnos.length + 1).toString(),
+            nombreAlumno: nombreAlumnoCrear,
         })
         this.setState({
-            nombreAlumno: '',
+            nombreAlumnoCrear: '',
             alumnos: alumnos,
             pantalla: 'lista',
         })
@@ -54,19 +55,19 @@
     /* eventos para pantalla editar */
     eventoEditarNombre = (textNombre) => {
         this.setState({
-            nombreAlumno: textNombre,
+            nombreAlumnoEditar: textNombre,
         })
     }
 
     eventoEditar = () => {
-        const { nombreAlumno, editarId, alumnos } = this.state
+        const { nombreAlumnoEditar, editarId, alumnos } = this.state
         for(let i = 0; i < alumnos.length; i++) {
             if(editarId === alumnos[i].key) {
-                alumnos[i].nombreAlumno = nombreAlumno;
+                alumnos[i].nombreAlumno = nombreAlumnoEditar;
             }
         }
         this.setState({
-            nombreAlumno: '',
+            nombreAlumnoEditar: '',
             alumnos: alumnos,
             pantalla: 'lista',
         })
@@ -74,7 +75,7 @@
 
     render() {
 
-        const { pantalla, alumnos, nombreAlumno, } = this.state
+        const { pantalla, alumnos, nombreAlumnoCrear, nombreAlumnoEditar, } = this.state
 
         switch (pantalla) {
 
@@ -89,7 +90,7 @@
             case 'crear':
                 return (
                     <Crear
-                        nombre={nombreAlumno}
+                        nombre={nombreAlumnoCrear}
                         eventoNombre={this.eventoNombre}
                         eventoCrear={this.eventoCrear}
                     />
@@ -97,7 +98,7 @@
             case 'editar':
                 return (
                     <Editar
-                        nombre={nombreAlumno}
+                        nombre={nombreAlumnoEditar}
                         eventoEditarNombre={this.eventoPantallaEditar}
                         eventoEditar={this.eventoEditar}
                     />

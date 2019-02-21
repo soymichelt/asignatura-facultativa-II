@@ -4,6 +4,7 @@ import {
     Text,
     Image,
     StyleSheet,
+    Button,
 } from 'react-native'
 
 const TestStyle = (props) => {
@@ -25,12 +26,14 @@ const TestStyle = (props) => {
                 <Image
                     style={styles.imagenPerfil}
                     source={ require('./../../assets/logo.png') }
+                    width={50}
+                    height={80}
                 />
             </View>
 
             <View style={styles.contenedorDeBotones}>
                 <View style={styles.boton}>
-                    <Button title='Perfil' />
+                    <Button title='Perfil' color={"red"} />
                 </View>
                 <View style={styles.boton}>
                     <Button title='Chat' />
@@ -53,16 +56,18 @@ const styles = StyleSheet.create({
     },
     descripcion: {
         marginBottom: 8,
-        color: 'yellow',
-        fontSize: 12,
+        color: 'black',
+        fontSize: 14,
     },
     contenedorDeBotones: {
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'flex-end',
+        alignItems: 'center',
     },
     boton: {
-        flex: 1,
+        width: 100,
+        height: 30,
+        margin: 8,
     },
 });
 
