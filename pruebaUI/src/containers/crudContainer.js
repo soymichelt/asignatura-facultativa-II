@@ -14,7 +14,7 @@
             alumnos: [],
             nombreAlumnoCrear: '',
             nombreAlumnoEditar: '',
-            editarId: 0,
+            editarId: '',
         };
 
     }
