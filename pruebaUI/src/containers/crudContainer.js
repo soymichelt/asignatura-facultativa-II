@@ -73,6 +73,19 @@
         })
     }
 
+    /* para eliminar */
+    eventoEliminar = () => {
+        const { editarId, alumnos, } = this.state
+        const indiceEliminar = alumnos.findIndex(item => item.key === editarId)
+        if(indiceEliminar > -1) {
+            alumnos.splice(indiceEliminar, 1)
+        }
+        this.setState({
+            alumnos: alumnos,
+            pantalla: 'lista',
+        })
+    }
+
     render() {
 
         const { pantalla, alumnos, nombreAlumnoCrear, nombreAlumnoEditar, } = this.state
@@ -99,7 +112,7 @@
                 return (
                     <Editar
                         nombre={nombreAlumnoEditar}
-                        eventoEditarNombre={this.eventoPantallaEditar}
+                        eventoEditarNombre={this.eventoEditarNombre}
                         eventoEditar={this.eventoEditar}
                     />
                 )
