@@ -7,7 +7,7 @@ import Crud from './../containers/crudContainer'
 const Principal = (props) => {
 
     return (
-        <TestPlatform />
+        <Crud />
     )
 
 }

@@ -68,8 +68,6 @@
         }
         this.setState({
             nombreAlumnoEditar: '',
-<<<<<<< HEAD
-=======
             alumnos: alumnos,
             pantalla: 'lista',
         })
@@ -83,7 +81,6 @@
             alumnos.splice(indiceEliminar, 1)
         }
         this.setState({
->>>>>>> 430e49223bab3ca2c065fee875b0f2879951569f
             alumnos: alumnos,
             pantalla: 'lista',
         })
@@ -115,11 +112,7 @@
                 return (
                     <Editar
                         nombre={nombreAlumnoEditar}
-<<<<<<< HEAD
-                        eventoEditarNombre={this.eventoPantallaEditar}
-=======
                         eventoEditarNombre={this.eventoEditarNombre}
->>>>>>> 430e49223bab3ca2c065fee875b0f2879951569f
                         eventoEditar={this.eventoEditar}
                     />
                 )
