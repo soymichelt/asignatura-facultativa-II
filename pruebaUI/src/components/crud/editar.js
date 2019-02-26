@@ -14,6 +14,7 @@ const Crear = (props) => {
         nombre, 
         eventoEditarNombre, 
         eventoEditar,
+        eventoEliminar,
     } = props
 
     return (
@@ -33,7 +34,7 @@ const Crear = (props) => {
                 <Button
                     title='Eliminar'
                     color='red'
-                    onPress={eventoEditar}
+                    onPress={eventoEliminar}
                 />
             </View>
             

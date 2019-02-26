@@ -10,7 +10,7 @@ import {
 
 const List = (props) => {
 
-    const { data, eventoPantallaAgregar, eventoPantallaEditar } = props
+    const { data, eventoPantallaAgregar, eventoPantallaEditar, eventoPantallaEliminar } = props
     
     return (
 
@@ -23,7 +23,10 @@ const List = (props) => {
             <FlatList
                 data={data}
                 renderItem={
-                    ({item}) => <Elemento item={item} eventoPantallaEditar={eventoPantallaEditar} />
+                    ({item}) => <Elemento item={item}
+                        eventoPantallaEditar={eventoPantallaEditar}
+                        eventoPantallaEliminar={eventoPantallaEliminar}
+                    />
                 }
             />
         </ScrollView>
@@ -36,12 +39,14 @@ const Elemento = (props) => {
 
     const {
         item,
-        eventoPantallaEditar
+        eventoPantallaEditar,
+        eventoPantallaEliminar,
     } = props
 
     return (
         <TouchableOpacity
             onPress={ () => eventoPantallaEditar(item.key) }
+            onLongPress= {() => eventoPantallaEliminar(item.key) }
         >
             <Text style={styles.elemento}>
                 {item.nombreAlumno}

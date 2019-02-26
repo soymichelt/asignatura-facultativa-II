@@ -3,6 +3,7 @@
  import Lista from './../components/crud/list'
  import Crear from './../components/crud/crear'
  import Editar from './../components/crud/editar'
+ import Eliminar from '../components/crud/eliminar';
 
  class CrudContainer extends Component {
 
@@ -29,6 +30,15 @@
         this.setState({
             pantalla: 'editar',
             editarId: alumnoId,
+        })
+    }
+    eventoPantallaEliminar = (alumnoId) => {
+        const { alumnos } = this.state
+        const indiceEliminar = alumnos.findIndex(item => item.key === alumnoId)
+        this.setState({
+            pantalla: 'eliminar',
+            eliminarId: alumnoId,
+            nombreAlumnoAEliminar: alumnos[indiceEliminar].nombreAlumno,
         })
     }
 
@@ -86,6 +96,18 @@
         })
     }
 
+    eventoBorrar = () => {
+        const { eliminarId, alumnos, } = this.state
+        const indiceEliminar = alumnos.findIndex(item => item.key === eliminarId)
+        if(indiceEliminar > -1) {
+            alumnos.splice(indiceEliminar, 1)
+        }
+        this.setState({
+            alumnos: alumnos,
+            pantalla: 'lista',
+        })
+    }
+
     render() {
 
         const { pantalla, alumnos, nombreAlumnoCrear, nombreAlumnoEditar, } = this.state
@@ -98,6 +120,7 @@
                         data={alumnos}
                         eventoPantallaAgregar={this.eventoPantallaAgregar}
                         eventoPantallaEditar={this.eventoPantallaEditar}
+                        eventoPantallaEliminar={this.eventoPantallaEliminar}
                     />
                 )
             case 'crear':
@@ -114,9 +137,17 @@
                         nombre={nombreAlumnoEditar}
                         eventoEditarNombre={this.eventoEditarNombre}
                         eventoEditar={this.eventoEditar}
+                        eventoEliminar={this.eventoEliminar}
                     />
                 )
             case 'eliminar':
+                const { nombreAlumnoAEliminar } = this.state
+                return(
+                    <Eliminar
+                        nombre={nombreAlumnoAEliminar}
+                        eventoEliminar={this.eventoBorrar}
+                    />
+                )
         }
 
     }
