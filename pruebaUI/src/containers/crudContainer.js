@@ -14,7 +14,7 @@
             alumnos: [],
             nombreAlumnoCrear: '',
             nombreAlumnoEditar: '',
-            editarId: 0,
+            editarId: '',
         };
 
     }
@@ -68,6 +68,22 @@
         }
         this.setState({
             nombreAlumnoEditar: '',
+<<<<<<< HEAD
+=======
+            alumnos: alumnos,
+            pantalla: 'lista',
+        })
+    }
+
+    /* para eliminar */
+    eventoEliminar = () => {
+        const { editarId, alumnos, } = this.state
+        const indiceEliminar = alumnos.findIndex(item => item.key === editarId)
+        if(indiceEliminar > -1) {
+            alumnos.splice(indiceEliminar, 1)
+        }
+        this.setState({
+>>>>>>> 430e49223bab3ca2c065fee875b0f2879951569f
             alumnos: alumnos,
             pantalla: 'lista',
         })
@@ -99,7 +115,11 @@
                 return (
                     <Editar
                         nombre={nombreAlumnoEditar}
+<<<<<<< HEAD
                         eventoEditarNombre={this.eventoPantallaEditar}
+=======
+                        eventoEditarNombre={this.eventoEditarNombre}
+>>>>>>> 430e49223bab3ca2c065fee875b0f2879951569f
                         eventoEditar={this.eventoEditar}
                     />
                 )
