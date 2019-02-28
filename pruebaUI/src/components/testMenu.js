@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
 const MenuNavigator = createStackNavigator({
     Menu: {
         screen: TestMenu,
+        headerTitle: 'Estilos y Layout',
     },
     PantallaEstilosYLayout: {
         screen: TestStyle,
