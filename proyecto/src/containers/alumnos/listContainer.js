@@ -55,6 +55,10 @@ class ListContainer extends Component {
 
     }
 
+    async componentDidMount() {
+        console.log()
+    }
+
 }
 
 const mapStateToProps = (newState, newProps) => {

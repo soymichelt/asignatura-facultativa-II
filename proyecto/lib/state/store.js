@@ -14,7 +14,7 @@ import reducer from './reducers/combine'
 */
 const initialState = {
     alumno: {
-        listado: [],
+        listado: null,
         estado: '',
         nombre: '',
         telefono: '',

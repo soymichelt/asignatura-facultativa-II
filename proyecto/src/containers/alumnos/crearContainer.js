@@ -9,8 +9,8 @@ import {
 
 class CrearContainer extends Component {
 
-    eventoAgregarAlumno = () => {
-        this.props.agregarAlumno({
+    eventoAgregarAlumno = async () => {
+        await this.props.agregarAlumno({
             nombre: this.props.nombre,
             telefono: this.props.telefono,
         })
@@ -70,7 +70,7 @@ const mapStateToProps = (newState, newProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
 
-    agregarAlumno: (alumno) => dispatch(agregarAlumno(alumno)),
+    agregarAlumno: async (alumno) => dispatch(await agregarAlumno(alumno)),
     nombreAgregar: (nombre) => dispatch(nombreAgregar(nombre)),
     telefonoAgregar: (telefono) => dispatch(telefonoAgregar(telefono)),
 

@@ -1,3 +1,36 @@
+import { AsyncStorage } from 'react-native'
+
+const obtenerAgendaDeBaseDeDatos = async () => {
+    try {
+        let agenda = await AsyncStorage.getItem('AGENDA');
+        if(agenda !== null) {
+            const datosDeLaAgenda = JSON.parse(agenda);
+            return datosDeLaAgenda;
+        }
+        else {
+            return [];
+        }
+    }
+    catch(error) {
+        return [];
+    }
+}
+
+const guardarAgenda = async (listadoAgenda) => {
+    try {
+        const agenda = await this.getAgendaDeBaseDeDatos();
+        const datosAGuardar = JSON.stringify({ data: listadoAgenda });
+        if(agenda !== null) {
+            await AsyncStorage.setItem('AGENDA', datosAGuardar);
+        }
+        else {
+            await AsyngStorage.mergeItem('AGENDA', datosAGuardar);
+        }
+    }
+    catch(error) {
+    }
+}
+
 /* Action Type's */
 export const GUARDANDO_ALUMNO  =   'GUARDANDO_ALUMNO'
 export const ALUMNO_AGREGADO = 'ALUMNO_AGREGADO'
@@ -11,23 +44,36 @@ const eventoNombreAlumnoAgregar = (payload) => ({ type: EVENTO_NOMBRE_ALUMNO_AGR
 const eventoTelefonoAlumnoAgregar = (payload) => ({ type: EVENTO_TELEFONO_ALUMNO_AGREGAR, payload })
 
 /* Action's */
-export const agregarAlumno = (datosAlumno) => {
-    return (dispatch, getState) => {
+export const agregarAlumno = async (datosAlumno) => {
+    return async (dispatch, getState) => {
+
         dispatch(guardandoAlumno({
             alumno: {
                 estado: 'guardando',
             },
         }))
+
         const { alumno } = getState()
+
         let { listado } = alumno
+
+        if(listado === null) {
+            listado = await obtenerAgendaDeBaseDeDatos();
+        }
+
         if(!listado) {
             listado = []
         }
+
         listado.push({
             key: (listado.length + 1).toString(),
             nombre: datosAlumno.nombre,
             telefono: datosAlumno.telefono,
         })
+
+        //guardar datos en la base de datos
+        await guardarAgenda(listado)
+
         dispatch(alumnoAgregado({
             alumno: {
                 estado: 'guardado',
