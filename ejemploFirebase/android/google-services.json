@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "786274656627",
+    "firebase_url": "https://carnet-app.firebaseio.com",
+    "project_id": "carnet-app",
+    "storage_bucket": "carnet-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786274656627:android:4bad6118fa329fa3",
+        "android_client_info": {
+          "package_name": "com.ejemplofirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786274656627-mtrfo7roni00rf7dfpbonj9gl8lg5a2k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ejemplofirebase",
+            "certificate_hash": "c7ea20651e5f83c3a547d7dcb5e11f0067f3c91e"
+          }
+        },
+        {
+          "client_id": "786274656627-mhvo4e6i1njj01p4prcsbg07ienqmonj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiNpSpWwunt6hZIhcyj7BtrSmvJw1oEso"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786274656627-mhvo4e6i1njj01p4prcsbg07ienqmonj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
