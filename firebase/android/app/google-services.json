@@ -1,52 +1,41 @@
 {
   "project_info": {
-    "project_number": "786274656627",
-    "firebase_url": "https://carnet-app.firebaseio.com",
-    "project_id": "carnet-app",
-    "storage_bucket": "carnet-app.appspot.com"
+    "project_number": "850670306816",
+    "firebase_url": "https://listado-alumnos-ee7ae.firebaseio.com",
+    "project_id": "listado-alumnos-ee7ae",
+    "storage_bucket": "listado-alumnos-ee7ae.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:786274656627:android:4bad6118fa329fa3",
+        "mobilesdk_app_id": "1:850670306816:android:7355dd1dd6ab70d0",
         "android_client_info": {
-          "package_name": "com.ejemplofirebase"
+          "package_name": "com.firebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "786274656627-mtrfo7roni00rf7dfpbonj9gl8lg5a2k.apps.googleusercontent.com",
+          "client_id": "850670306816-gf4o2sdvcg9f71bo2kn6os84iblfq5ds.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ejemplofirebase",
-            "certificate_hash": "c7ea20651e5f83c3a547d7dcb5e11f0067f3c91e"
+            "package_name": "com.firebase",
+            "certificate_hash": "61f955df2551ccef57f23360496005b749e5f7ca"
           }
-        },
-        {
-          "client_id": "786274656627-mhvo4e6i1njj01p4prcsbg07ienqmonj.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDiNpSpWwunt6hZIhcyj7BtrSmvJw1oEso"
+          "current_key": "AIzaSyA-ZvX10K_mv8EWlMWZA9PetqW3DeaxRHU"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "786274656627-mhvo4e6i1njj01p4prcsbg07ienqmonj.apps.googleusercontent.com",
+              "client_id": "850670306816-p99op3afv2l466ceh8a5bccehj6peol0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
